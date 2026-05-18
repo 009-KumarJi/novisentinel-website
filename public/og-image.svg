@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- subtle grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+    <!-- soft mint glow in the corner -->
+    <radialGradient id="glow" cx="100%" cy="100%" r="60%">
+      <stop offset="0" stop-color="#7cf5b0" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#7cf5b0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#0a0b0d"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- top hairline -->
+  <line x1="0" y1="80" x2="1200" y2="80" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- top bar: logo + wordmark + tagline-side mono -->
+  <g transform="translate(72, 28)">
+    <!-- aperture shield -->
+    <g transform="translate(0, 4) scale(0.5)">
+      <path d="M48 6 L84 18 V44 C84 64 70 78 48 88 C26 78 12 64 12 44 V18 Z" fill="#e8e6e1"/>
+      <path d="M32 62 V32 L64 62 V32" fill="none" stroke="#0a0b0d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="72" cy="22" r="6" fill="#7cf5b0"/>
+    </g>
+    <!-- wordmark -->
+    <text x="60" y="33"
+      font-family="'Bricolage Grotesque', 'Inter', system-ui, sans-serif"
+      font-size="24" font-weight="600" fill="#e8e6e1" letter-spacing="-0.5">NoviSentinel</text>
+  </g>
+
+  <!-- top-right mono meta -->
+  <g transform="translate(1128, 50)" text-anchor="end">
+    <text font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13"
+      fill="rgba(232,230,225,0.55)" letter-spacing="1.5">OPEN SOURCE · APACHE 2.0</text>
+  </g>
+
+  <!-- main headline -->
+  <g transform="translate(72, 220)">
+    <text font-family="'Bricolage Grotesque', 'Inter', system-ui, sans-serif"
+      font-size="98" font-weight="500" fill="#e8e6e1" letter-spacing="-3">
+      <tspan x="0" dy="0">Stop leaking</tspan>
+      <tspan x="0" dy="108"><tspan font-style="italic" font-weight="400" fill="#7cf5b0">secrets</tspan><tspan> to your AI.</tspan></tspan>
+    </text>
+  </g>
+
+  <!-- subhead -->
+  <g transform="translate(72, 480)">
+    <text font-family="'Bricolage Grotesque', 'Inter', system-ui, sans-serif"
+      font-size="22" fill="rgba(232,230,225,0.65)" letter-spacing="-0.3">
+      The open-source privacy proxy for AI coding agents.
+    </text>
+    <text y="32" font-family="'Bricolage Grotesque', 'Inter', system-ui, sans-serif"
+      font-size="22" fill="rgba(232,230,225,0.65)" letter-spacing="-0.3">
+      Redacts secrets and PII before they ever reach the LLM.
+    </text>
+  </g>
+
+  <!-- bottom hairline -->
+  <line x1="0" y1="556" x2="1200" y2="556" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- bottom row -->
+  <g transform="translate(72, 596)">
+    <!-- live dot -->
+    <circle cx="5" cy="-5" r="4" fill="#7cf5b0"/>
+    <text x="20" y="0" font-family="'JetBrains Mono', ui-monospace, monospace"
+      font-size="13" fill="rgba(232,230,225,0.55)" letter-spacing="0.5">
+      v1.0.0 · runs locally · no telemetry
+    </text>
+  </g>
+  <g transform="translate(1128, 596)" text-anchor="end">
+    <text font-family="'JetBrains Mono', ui-monospace, monospace"
+      font-size="13" fill="#7cf5b0" letter-spacing="1">novisentinel.com</text>
+  </g>
+</svg>
