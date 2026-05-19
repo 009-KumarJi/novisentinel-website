@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://novisentinel.com/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://novisentinel.com/public/og-image.png</image:loc>
+      <image:title>NoviSentinel — Stop leaking secrets to your AI</image:title>
+      <image:caption>Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM.</image:caption>
+    </image:image>
+  </url>
+</urlset>

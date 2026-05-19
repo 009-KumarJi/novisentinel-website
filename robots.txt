@@ -1,0 +1,39 @@
+# NoviSentinel — https://novisentinel.com/
+# Open-source privacy proxy for AI coding agents.
+
+User-agent: *
+Allow: /
+Disallow: /public/_render-icons.py
+Disallow: /public/_render-og.py
+
+# Common AI training crawlers — opt out explicitly.
+# We are an *anti*-data-leak product; we do not want our marketing copy
+# to become training data for the very models we redact secrets from.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+Sitemap: https://novisentinel.com/sitemap.xml

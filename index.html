@@ -3,31 +3,140 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0a0b0d" />
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
+<meta name="color-scheme" content="dark light" />
+
+<title>NoviSentinel — Stop leaking secrets to your AI</title>
+<meta name="description" content="Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM, restores them in the response. Self-hosted, Apache 2.0." />
+<meta name="keywords" content="ai privacy, llm privacy proxy, redact secrets, prevent ai data leaks, claude code, cursor, aider, codex, presidio, open source ai security, self-hosted llm proxy" />
+<meta name="author" content="Krishna Kumar" />
+<meta name="application-name" content="NoviSentinel" />
+<meta name="apple-mobile-web-app-title" content="NoviSentinel" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<link rel="canonical" href="https://novisentinel.com/" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
-<title>NoviSentinel — Stop leaking secrets to your AI</title>
-<meta name="description" content="Open-source privacy proxy for AI coding agents. Redacts secrets and PII before they reach the LLM, restores them in the response. Works with Claude Code, Cursor, Aider, Codex." />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
 <meta property="og:title" content="NoviSentinel — Stop leaking secrets to your AI" />
-<meta property="og:description" content="Open-source privacy proxy for AI coding agents. Self-hosted. Apache 2.0." />
+<meta property="og:description" content="Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM. Self-hosted. Apache 2.0." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://novisentinel.com" />
+<meta property="og:url" content="https://novisentinel.com/" />
+<meta property="og:site_name" content="NoviSentinel" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://novisentinel.com/public/og-image.png" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="NoviSentinel — Stop leaking secrets to your AI" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NoviSentinel — Stop leaking secrets to your AI" />
+<meta name="twitter:description" content="Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM. Self-hosted. Apache 2.0." />
 <meta name="twitter:image" content="https://novisentinel.com/public/og-image.png" />
+<meta name="twitter:image:alt" content="NoviSentinel — Stop leaking secrets to your AI" />
+
+<script>
+  // Apply theme before paint to prevent FOUC.
+  // Priority: stored choice > OS preference > dark.
+  (function () {
+    try {
+      var stored = null;
+      try { stored = localStorage.getItem('ns-theme'); } catch (e) {}
+      var t = stored;
+      if (t !== 'dark' && t !== 'light') {
+        t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://github.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://novisentinel.com/#website",
+      "url": "https://novisentinel.com/",
+      "name": "NoviSentinel",
+      "description": "Open-source privacy proxy for AI coding agents.",
+      "publisher": { "@id": "https://novisentinel.com/#org" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://novisentinel.com/#org",
+      "name": "NoviSentinel",
+      "url": "https://novisentinel.com/",
+      "logo": "https://novisentinel.com/public/icon-512.png",
+      "sameAs": [
+        "https://github.com/009-KumarJi/novisentinel-core",
+        "https://pypi.org/project/novisentinel/",
+        "https://marketplace.visualstudio.com/items?itemName=novisentinel.novisentinel-vscode"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Krishna Kumar",
+        "url": "https://github.com/009-KumarJi"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://novisentinel.com/#app",
+      "name": "NoviSentinel",
+      "headline": "Stop leaking secrets to your AI",
+      "description": "Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM, restores them in the response. Works with Claude Code, Cursor, Aider, Codex, and any OpenAI- or Anthropic-shape client.",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Privacy & Security",
+      "operatingSystem": "Linux, macOS, Windows",
+      "url": "https://novisentinel.com/",
+      "downloadUrl": "https://github.com/009-KumarJi/novisentinel-core",
+      "installUrl": "https://github.com/009-KumarJi/novisentinel-core",
+      "softwareVersion": "1.0.0-beta",
+      "releaseNotes": "https://github.com/009-KumarJi/novisentinel-core/releases",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "image": "https://novisentinel.com/public/og-image.png",
+      "screenshot": "https://novisentinel.com/public/og-image.png",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": { "@id": "https://novisentinel.com/#org" },
+      "publisher": { "@id": "https://novisentinel.com/#org" },
+      "featureList": [
+        "Local-first proxy — runs entirely on your machine",
+        "Detects 10+ secret types (AWS, OpenAI, Anthropic, GitHub, Slack, Stripe, JWT)",
+        "Presidio + spaCy PII redaction (emails, phones, SSNs, credit cards, IBANs, IPs)",
+        "Drop-in for Claude Code, Cursor, Aider, Codex, Cline",
+        "Streaming preserved end-to-end",
+        "Prompt-injection detection on inbound requests",
+        "Custom detectors via HTTP endpoint"
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ============= top ticker ============= -->
 <div class="ticker mono">
@@ -45,43 +154,48 @@
 </div>
 
 <!-- ============= nav ============= -->
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <div class="nav-start">
-      <a class="logo" href="/">
+      <a class="logo" href="/" aria-label="NoviSentinel home">
         <span class="logo-mark">
-          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <path class="ns-frame" d="M48 6 L84 18 V44 C84 64 70 78 48 88 C26 78 12 64 12 44 V18 Z"/>
             <path class="ns-stroke" d="M32 62 V32 L64 62 V32" fill="none" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle class="ns-eye" cx="72" cy="22" r="5.5"/>
           </svg>
         </span>
         <span>NoviSentinel</span>
-        <span class="chip mint" style="margin-left: 8px;">beta</span>
+        <span class="chip mint nav-beta">beta</span>
       </a>
     </div>
     <div class="nav-mid">
       <a class="link" href="#how">how it works</a>
       <a class="link" href="#integrations">integrations</a>
       <a class="link" href="#install">install</a>
-      <a class="link" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener">docs</a>
+      <a class="link" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener noreferrer">docs</a>
     </div>
     <div class="nav-end">
-      <div class="theme-toggle" role="group" aria-label="Color theme">
-        <button type="button" data-theme-set="dark" class="on">dark</button>
-        <button type="button" data-theme-set="light">light</button>
+      <div class="theme-toggle" role="radiogroup" aria-label="Color theme">
+        <button type="button" role="radio" data-theme-set="dark" aria-checked="true">dark</button>
+        <button type="button" role="radio" data-theme-set="light" aria-checked="false">light</button>
       </div>
-      <a class="btn primary" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener">⭐ Star on GitHub</a>
+      <a class="btn primary" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener noreferrer" aria-label="Star NoviSentinel on GitHub">⭐ Star on GitHub</a>
     </div>
   </div>
 </nav>
+
+<main id="main" tabindex="-1">
 
 <!-- ============= hero ============= -->
 <section class="hero">
   <div class="hero-grid">
     <div>
       <p class="kicker"><span class="dot on"></span> public beta · privacy proxy for AI coding agents</p>
-      <h1>Stop leaking <em>secrets</em><br/>to your AI.</h1>
+      <h1>
+        <span class="h1-line">Stop leaking <em>secrets</em></span>
+        <span class="h1-line">to your AI.</span>
+      </h1>
       <p class="deck">
         NoviSentinel is the open-source layer between your coding agent and the LLM.
         It detects secrets and PII, swaps them for stable placeholders before the request
@@ -90,17 +204,17 @@
       </p>
       <div class="cta-row">
         <a class="btn primary" href="#install">Get started</a>
-        <a class="btn" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         <span class="chip mint">apache 2.0 · self-hosted</span>
       </div>
     </div>
 
-    <div class="hero-side" aria-label="Live redaction example">
-      <header>
+    <figure class="hero-side" aria-label="Live redaction example">
+      <figcaption class="hero-side-head">
         <span>proxy.log</span>
         <span><span class="dot on"></span> redacting in real time</span>
-      </header>
-      <div class="code"><span class="c"># your request, untouched</span>
+      </figcaption>
+      <pre class="code"><span class="c"># your request, untouched</span>
 <span class="k">POST</span> /v1/chat/completions
 {
   <span class="s">"model"</span>: <span class="s">"claude-sonnet-4-5"</span>,
@@ -113,9 +227,8 @@
 [scan]    detected 1 privacy item: <span class="n">AWS_ACCESS_KEY</span>
 [upstream sees] fix this boto3 snippet — aws_access_key_id=<span class="v">'&lt;REDACTED_AWS_ACCESS_KEY_001&gt;'</span>
 [redact]  forwarding upstream with 1 placeholder
-[restore] swapped 1 placeholder back into response
-</div>
-    </div>
+[restore] swapped 1 placeholder back into response</pre>
+    </figure>
   </div>
 </section>
 
@@ -155,7 +268,7 @@
     <div class="pillar">
       <span class="num">03</span>
       <h3>Drop-in for any agent.</h3>
-      <p>Speaks both <span class="mono" style="color: var(--mint)">/v1/chat/completions</span> and <span class="mono" style="color: var(--mint)">/v1/messages</span>. Set one env var on your agent and the proxy is invisible — Claude Code, Cursor, Aider, Codex, Cline, raw SDK calls, all work.</p>
+      <p>Speaks both <span class="mono tok-mint">/v1/chat/completions</span> and <span class="mono tok-mint">/v1/messages</span>. Set one env var on your agent and the proxy is invisible — Claude Code, Cursor, Aider, Codex, Cline, raw SDK calls, all work.</p>
       <ul>
         <li>Anthropic, OpenAI, and Google Gemini upstreams</li>
         <li>Streaming preserved end-to-end</li>
@@ -206,7 +319,7 @@
       <h2>Works with the agents you already use.</h2>
     </div>
     <p class="lede">
-      Anything that speaks the OpenAI or Anthropic HTTP API. Point your agent at <span class="mono" style="color: var(--mint)">localhost:8000</span> and the proxy is invisible. Upstream LLM routing is automatic based on model name.
+      Anything that speaks the OpenAI or Anthropic HTTP API. Point your agent at <span class="mono tok-mint">localhost:8000</span> and the proxy is invisible. Upstream LLM routing is automatic based on model name.
     </p>
   </div>
 
@@ -325,26 +438,28 @@ print(result.detections)</pre>
 <section>
   <div class="cta">
     <div>
-      <h2>Ship faster, without shipping your <em style="font-style: italic; color: var(--mint);">secrets.</em></h2>
+      <h2>Ship faster, without shipping your <em>secrets.</em></h2>
       <p>
         v1.0.0 <strong>public beta</strong> is live. Try it locally in 30 seconds — no signup, no API key, no telemetry. The product works end-to-end today, but the detector tuning, performance, and clients-list are still maturing. If you find a detection it misses, open an issue — real-world false negatives are how the beta hardens.
       </p>
     </div>
     <div class="cta-actions">
-      <a class="btn primary" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener">⭐ Star on GitHub</a>
-      <a class="btn" href="https://pypi.org/project/novisentinel/" target="_blank" rel="noopener">View on PyPI →</a>
-      <a class="btn ghost" href="https://marketplace.visualstudio.com/items?itemName=novisentinel.novisentinel-vscode" target="_blank" rel="noopener">VS Code Marketplace →</a>
+      <a class="btn primary" href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener noreferrer">⭐ Star on GitHub</a>
+      <a class="btn" href="https://pypi.org/project/novisentinel/" target="_blank" rel="noopener noreferrer">View on PyPI →</a>
+      <a class="btn ghost" href="https://marketplace.visualstudio.com/items?itemName=novisentinel.novisentinel-vscode" target="_blank" rel="noopener noreferrer">VS Code Marketplace →</a>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============= footer ============= -->
 <footer>
   <div class="foot-inner">
     <div>
-      <a class="logo" href="/">
+      <a class="logo" href="/" aria-label="NoviSentinel home">
         <span class="logo-mark">
-          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <path class="ns-frame" d="M48 6 L84 18 V44 C84 64 70 78 48 88 C26 78 12 64 12 44 V18 Z"/>
             <path class="ns-stroke" d="M32 62 V32 L64 62 V32" fill="none" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle class="ns-eye" cx="72" cy="22" r="5.5"/>
@@ -354,7 +469,7 @@ print(result.detections)</pre>
       </a>
       <p class="meta">
         Open-source privacy layer for AI coding agents.<br/>
-        Apache 2.0. Built by <a href="https://github.com/009-KumarJi" style="color: var(--fg-2);">Krishna Kumar</a>.<br/>
+        Apache 2.0. Built by <a href="https://github.com/009-KumarJi" target="_blank" rel="noopener noreferrer">Krishna Kumar</a>.<br/>
         v 1.0.0-beta · 2026
       </p>
     </div>
@@ -364,45 +479,78 @@ print(result.detections)</pre>
         <li><a href="#how">How it works</a></li>
         <li><a href="#integrations">Integrations</a></li>
         <li><a href="#install">Install</a></li>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core/releases" target="_blank" rel="noopener">Releases</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
       </ul>
     </div>
     <div class="foot">
       <h5>Open Source</h5>
       <ul>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener">GitHub repo</a></li>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core/issues" target="_blank" rel="noopener">Issues</a></li>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a></li>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0 license</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core" target="_blank" rel="noopener noreferrer">GitHub repo</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contribute</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Apache 2.0 license</a></li>
       </ul>
     </div>
     <div class="foot">
       <h5>Distribution</h5>
       <ul>
-        <li><a href="https://pypi.org/project/novisentinel/" target="_blank" rel="noopener">PyPI</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=novisentinel.novisentinel-vscode" target="_blank" rel="noopener">VS Code Marketplace</a></li>
-        <li><a href="https://github.com/009-KumarJi/novisentinel-core/pkgs/container/novisentinel" target="_blank" rel="noopener">GHCR (Docker)</a></li>
+        <li><a href="https://pypi.org/project/novisentinel/" target="_blank" rel="noopener noreferrer">PyPI</a></li>
+        <li><a href="https://marketplace.visualstudio.com/items?itemName=novisentinel.novisentinel-vscode" target="_blank" rel="noopener noreferrer">VS Code Marketplace</a></li>
+        <li><a href="https://github.com/009-KumarJi/novisentinel-core/pkgs/container/novisentinel" target="_blank" rel="noopener noreferrer">GHCR (Docker)</a></li>
       </ul>
     </div>
   </div>
 </footer>
 
 <script>
-  // theme toggle
-  const root = document.documentElement;
-  const buttons = document.querySelectorAll('[data-theme-set]');
-  const savedTheme = localStorage.getItem('ns-theme') || 'dark';
-  root.setAttribute('data-theme', savedTheme);
-  buttons.forEach(b => {
-    if (b.dataset.themeSet === savedTheme) b.classList.add('on');
-    else b.classList.remove('on');
-    b.addEventListener('click', () => {
-      const t = b.dataset.themeSet;
+  // theme toggle (initial value already applied in <head> to avoid FOUC).
+  // Button highlighting is driven by the `data-theme` attribute via CSS,
+  // so we only manage ARIA state, focus, and persistence here.
+  (function () {
+    var root = document.documentElement;
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-set]'));
+    if (!buttons.length) return;
+
+    function apply(t, focus) {
       root.setAttribute('data-theme', t);
-      localStorage.setItem('ns-theme', t);
-      buttons.forEach(x => x.classList.toggle('on', x.dataset.themeSet === t));
+      try { localStorage.setItem('ns-theme', t); } catch (e) {}
+      buttons.forEach(function (b) {
+        var on = b.dataset.themeSet === t;
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+        b.tabIndex = on ? 0 : -1;
+        if (on && focus) b.focus();
+      });
+    }
+
+    apply(root.getAttribute('data-theme') || 'dark', false);
+
+    buttons.forEach(function (b, i) {
+      b.addEventListener('click', function () { apply(b.dataset.themeSet, false); });
+      b.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          apply(buttons[(i + 1) % buttons.length].dataset.themeSet, true);
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          apply(buttons[(i - 1 + buttons.length) % buttons.length].dataset.themeSet, true);
+        }
+      });
     });
-  });
+
+    // Keep in sync with OS preference if the user never made an explicit choice.
+    if (window.matchMedia) {
+      var mq = matchMedia('(prefers-color-scheme: light)');
+      var listener = function (ev) {
+        var stored = null;
+        try { stored = localStorage.getItem('ns-theme'); } catch (e) {}
+        if (stored !== 'dark' && stored !== 'light') {
+          apply(ev.matches ? 'light' : 'dark', false);
+        }
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+  })();
 </script>
 
 </body>

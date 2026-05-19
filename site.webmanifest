@@ -1,0 +1,22 @@
+{
+  "name": "NoviSentinel — Stop leaking secrets to your AI",
+  "short_name": "NoviSentinel",
+  "description": "Open-source privacy proxy for AI coding agents. Redacts API keys and PII before they reach the LLM, restores them in the response.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0b0d",
+  "theme_color": "#0a0b0d",
+  "lang": "en-US",
+  "categories": ["developer", "productivity", "security", "utilities"],
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/public/favicon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "/public/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/public/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/public/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/public/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
