@@ -493,10 +493,6 @@ footer { border-top: 1px solid var(--bd); margin-top: 80px; padding: 40px 24px 6
   .install .card { padding: 20px; }
   .install .card pre {
     font-size: 11.5px; padding: 12px;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    overflow-x: visible;
   }
 
   .cta { padding: 28px 20px; }
